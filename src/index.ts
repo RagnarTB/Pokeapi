@@ -2,8 +2,7 @@ import express, { Express } from 'express';
 import router from './routes/pokemon.route';
 
 const app: Express = express();
-const PORT = 3000;
-
+const PORT = process.env.PORT || 3000;
 // SERVIR ARCHIVOS ESTÁTICOS (NUEVO)
 app.use(express.static('public'));
 

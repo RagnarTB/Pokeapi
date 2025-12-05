@@ -4,7 +4,8 @@ mongoose.set('strictQuery', true);
 // Conectar a MongoDB (local) - FORMA CORRECTA PARA VERSIONES NUEVAS
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/pokemonDB');
+        const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/pokemonDB';
+        await mongoose.connect(mongoUri);
         console.log('✅ MongoDB conectado exitosamente');
     } catch (error: any) {
         console.log('❌ Error conectando a MongoDB:', error.message);
