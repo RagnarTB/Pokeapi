@@ -235,6 +235,55 @@
             color: #333;
             font-weight: bold;
         }
+
+        /* =========================================
+       RESPONSIVE DESIGN (Para Celulares)
+       ========================================= */
+        @media (max-width: 768px) {
+
+            /* 1. Cambiar el layout de columnas a filas */
+            .dashboard {
+                grid-template-columns: 1fr;
+                /* Una sola columna */
+                gap: 15px;
+            }
+
+            /* 2. Reducir márgenes para aprovechar la pantalla */
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            /* 3. Ajustar el título */
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            /* 4. Hacer que las tarjetas de Pokémon sean más pequeñas 
+              para que quepan 2 por fila en vez de 1 gigante */
+            .pokemon-list {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 10px;
+            }
+
+            .pokemon-card {
+                padding: 10px;
+            }
+
+            .pokemon-card img {
+                width: 80px;
+                height: 80px;
+            }
+
+            /* 5. Ajustar altura del modelo 3D para que no ocupe tanto */
+            #model-container {
+                height: 220px;
+            }
+        }
     </style>
 </head>
 
