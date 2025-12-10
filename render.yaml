@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: pokemon-service
+    runtime: node
+    buildCommand: cd pokemon-service && npm install && npm run build
+    startCommand: cd pokemon-service/dist && node index.js
+    envVars:
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: stats-service
+    runtime: node
+    buildCommand: cd stats-service && npm install && npm run build
+    startCommand: cd stats-service/dist && node index.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+
+  - type: web
+    name: frontend-service
+    runtime: node
+    buildCommand: cd frontend-service && npm install && npm run build
+    startCommand: cd frontend-service/dist && node index.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: POKEMON_SERVICE_URL
+        sync: false
+      - key: STATS_SERVICE_URL
+        sync: false
