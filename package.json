@@ -1,0 +1,13 @@
+{
+    "name": "pokeapi-monorepo",
+    "version": "1.0.0",
+    "description": "Monorepo con 3 microservicios",
+    "scripts": {
+        "install:all": "cd pokemon-service && npm install && cd ../stats-service && npm install && cd ../frontend-service && npm install",
+        "build:all": "cd pokemon-service && npm run build && cd ../stats-service && npm run build && cd ../frontend-service && npm run build",
+        "start": "node start-all.js"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.0"
+    }
+}
