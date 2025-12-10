@@ -3,7 +3,8 @@ import cors from 'cors';
 import router from './routes/stats.route';
 
 const app: Express = express();
-const PORT = process.env.PORT || 3001;
+// Puerto fijo 3001 para comunicación interna
+const PORT = 3001;
 
 // CORS para permitir comunicación entre servicios
 app.use(cors());

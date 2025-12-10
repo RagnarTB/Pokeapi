@@ -3,7 +3,8 @@ import cors from 'cors';
 import router from './routes/pokemon.route';
 
 const app: Express = express();
-const PORT = process.env.PORT || 3000;
+// Puerto fijo 3000 para comunicación interna
+const PORT = 3000;
 
 // CORS para permitir comunicación entre servicios
 app.use(cors());

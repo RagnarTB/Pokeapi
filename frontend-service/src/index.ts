@@ -2,6 +2,7 @@ import express, { Express } from 'express';
 import path from 'path';
 
 const app: Express = express();
+// Usa el puerto de Render (10000) - este es el único puerto expuesto públicamente
 const PORT = process.env.PORT || 3002;
 
 // Servir archivos estáticos desde la carpeta public
